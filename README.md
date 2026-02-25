@@ -84,6 +84,7 @@ The V2PRO unit listens for incoming messages on port 8001.
 | ... | ... |
 | Byte 34 | `map_name_29` |
 | Byte 35 | `Check` |
+
 **Do not send consecutive mapping commands**
 
 **Map Name Constraints:**
@@ -132,6 +133,7 @@ The V2PRO unit listens for incoming messages on port 8001.
 | Byte 14 | `Theta_1` |
 | Byte 15 | `Theta_0` |
 | Byte 16 | `Check` |
+
 **Once relocation is successful, V2PRO will continuously transmit the localization frame.**
 
 **Note:** Both`x` `y`and`theta`are transmitted as 4-byte (32-bit) integers.
