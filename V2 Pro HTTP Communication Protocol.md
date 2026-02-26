@@ -36,6 +36,7 @@ The V2PRO supports HTTP (POST, GET) protocols for mapping, map switching, reloca
 
 **Request URL**
 `http://{ip}:9998/tool/rob/quiet_update`
+
 **Request Example**
 
 ```json
@@ -48,6 +49,7 @@ The V2PRO supports HTTP (POST, GET) protocols for mapping, map switching, reloca
 
 **Request URL**
 `http://{ip}:9998/tool/rob/setHeight`
+
 **Request Example**
 
 ```json
@@ -73,6 +75,7 @@ The V2PRO supports HTTP (POST, GET) protocols for mapping, map switching, reloca
 
 **Request URL**
 `http://{ip}:9998/tool/rob/getRobotVersion`
+
 **Response Example**
 
 ```json
@@ -87,6 +90,7 @@ The V2PRO supports HTTP (POST, GET) protocols for mapping, map switching, reloca
 
 **Request URL**
 `http://{ip}:9998/tool/rob/getVehicle`
+
 **Response Example**
 
 ```json
@@ -105,6 +109,7 @@ The V2PRO supports HTTP (POST, GET) protocols for mapping, map switching, reloca
 
 **Request URL**
 `http://{ip}:9998/tool/rob/getRunMapZip`
+
 **Request Parameters**
 Content-Type: application/json
 | Required | Parameters | Description |
@@ -118,8 +123,10 @@ Returns a file with content-type: application/zip
 
 **Request URL**
 `http://{ip}:9998/tool/rob/getPose`
+
 **Request Parameters**
 `None`
+
 **Response Example**
 
 ```json
@@ -137,8 +144,10 @@ Returns a file with content-type: application/zip
 
 **Request URL**
 `http://{ip}:9998/tool/rob/relocate`
+
 **Request Parameters**
 Content-Type: application/json
+
 | Required | Parameters | Description |
 |----------|------------|----------------------|
 | Yes | x | X Position (meters) |
@@ -165,8 +174,10 @@ Content-Type: application/json
 
 **Request URL**
 `http://{ip}:9998/tool/rob/changeCurrentRunMap`
+
 **Request Parameters**
 Content-Type: application/json
+
 | Required | Parameters | Description |
 | --- | --- | --- |
 | YES | NAME | MAP_NAME |
@@ -184,6 +195,7 @@ Content-Type: application/json
 
 **Request URL**
 `http://{ip}:9998/tool/rob/startMapping`
+
 **Request Parameters**
 | Required | Parameters | Description |
 | --- | --- | --- |
@@ -202,6 +214,7 @@ Content-Type: application/json
 
 **Request URL**
 `http://{ip}:9998/tool/rob/stopMapping`
+
 **Request Parameters**
 `None`
 
@@ -218,6 +231,7 @@ Content-Type: application/json
 
 **Request URL**
 `http://{ip}:9998/tool/rob/sendCMD`
+
 **Request Parameters**
 
 ```json
@@ -243,6 +257,7 @@ Content-Type: application/json
 
 **Request URL**
 `http://{ip}:9998/tool/rob/sendCMD`
+
 **Request Example**
 
 ```json
@@ -268,6 +283,7 @@ Content-Type: application/json
 
 **Request URL**
 `http://{ip}:9998/tool/rob/getRunMapLists`
+
 **Request Parameters**
 `None`
 
@@ -290,6 +306,7 @@ Content-Type: application/json
 
 **Request URL**
 `http://{ip}:9998/tool/rob/uploadMapZip2RunMaps`
+
 **Request Parameters**
 `None`
 
@@ -314,6 +331,7 @@ Content-Type: application/json
 
 **Request URL**
 `http://{ip}:9998/tool/rob/downloadVisiomWithLaserMap`
+
 **Request Parameters**
 `None`
 
@@ -342,6 +360,7 @@ Content-Type: application/json
 
 **Request URL**
 `http://{ip}:9998/tool/rob/restart`
+
 **Request Parameters**
 `None`
 
@@ -358,6 +377,7 @@ Content-Type: application/json
 
 **Request URL**
 `http://{ip}:9998/tool/rob/Reboot`
+
 **Request Parameters**
 `None`
 
