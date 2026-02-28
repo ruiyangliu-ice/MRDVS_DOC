@@ -193,10 +193,10 @@ V2 supports 6 odometer types (0-5), configurable via the WEB interface:
 | Byte 15      | `Theta_0` |
 | Byte 16      | `Check`   |
 
-**Note:** Both`x` `y`and`theta`are transmitted as 4-byte (32-bit) integers.
+**Note:** Both`X` `Y`and`Theta`are transmitted as 4-byte (32-bit) integers.
 
-- `x` `y`: unit: mm
-- `theta`: unit: 0.01° (e.g., 90° = 9000)
+- `X` `Y`: unit: mm
+- `Theta`: unit: 0.01° (e.g., 90° = 9000)
 
 ---
 
@@ -242,7 +242,7 @@ V2 supports 6 odometer types (0-5), configurable via the WEB interface:
 
 ## 1.3 Outbound Data (V2 PRO Sends)
 
-### a. Localization Frame (25 bytes)
+### a. Localization Frame
 
 | Bytes        | Content       |
 | ------------ | ------------- |
