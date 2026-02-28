@@ -1,5 +1,27 @@
 # V2PRO UDP Communication Protocol
 
+---
+
+## Table of Contents
+
+1. [Data Format Specifications](#11-data-format-specifications)
+2. [Inbound Data (V2 PRO Receives)](#12-inbound-data-v2-pro-receives)
+   - [Odometry Frames](#a-odometry-frames)
+     - [odomType 0: Velocity-based Odometry (VX, VY, W)](#odomtype-0-velocity-based-odometry-vx-vy-w)
+     - [odomType 1: Position-based Odometry (X, Y, Theta)](#odomtype-1-position-based-odometry-x-y-theta)
+     - [odomType 2: Differential Drive Velocity (V_Left, V_Right)](#odomtype-2-differential-drive-velocity-v_left-v_right)
+     - [odomType 3: Differential Drive Distance (Mill_Left, Mill_Right)](#odomtype-3-differential-drive-distance-mill_left-mill_right)
+     - [odomType 4: Single Steer Drive Velocity (Angle, V)](#odomtype-4-single-steer-drive-velocity-angle-v)
+     - [odomType 5: Single Steer Drive Distance (Angle + Mill)](#odomtype-5-single-steer-drive-distance-angle--mill)
+   - [Relocalization Frame (Set Pose X, Y, Theta)](#b-relocalization-frame-set-pose-x-y-theta)
+   - [Mapping Control (Start/Stop)](#c-mapping-control-startstop)
+   - [Map Switching](#d-map-switching)
+3. [Outbound Data (V2 PRO Sends)](#13-outbound-data-v2-pro-sends)
+   - [Localization Frame](#a-localization-frame)
+   - [Task Result Frame (Mapping and switching status)](#b-task-result-frame-mapping-and-switching-status)
+
+---
+
 V2PRO supports client communication via UDP. You can configure the target device's IP and port settings through the web interface:
 
 - `portCode`: Target device listening port
