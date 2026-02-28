@@ -659,11 +659,3 @@ bool result
 rosservice call /lx_localization_node/LxCamera_DownloadHeatMap_srv "mapname: 'TEST_999'
 save_path: '/home/fr1511b/T/TEST'"
 ```
-
----
-
-## Document Information
-
-**Version:** V2PRO ROS1
-**Package:** `lx_camera_ros`
-**Last Updated:** 2026-02-28
