@@ -166,7 +166,7 @@ V2 supports 6 odometer types (0-5), configurable via the WEB interface:
 **Note:**`Angle`,`Mill`are transmitted as 4-byte (32-bit) integers.
 
 - `Angle`: unit: 0.01° (degrees, **not radians**)
-- `Mill`: unit: mm
+- `Mill`: unit: mm (is signed, positive/negative)
 - **Configuration Required:** Set steer wheel offset from center of motion in `initParams` (unit: mm)
 
 ---
