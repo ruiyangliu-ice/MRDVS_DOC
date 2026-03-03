@@ -7,9 +7,39 @@ V2PRO provides a ROS2 demo package `lx_camera_ros`. The following interface spec
 ## Table of Contents
 
 1. [Environment Setup and Compilation](#environment-setup-and-compilation)
+   - [Prerequisites](#prerequisites)
+     - [1. Install Qt5](#1-install-qt5)
+     - [2. Install libzip](#2-install-libzip)
+     - [3. Build the ROS2 Package](#3-build-the-ros2-package)
 2. [Execution](#execution)
 3. [ROS2 Topic Interfaces](#ros2-topic-interfaces)
+   - [Mapping Phase](#mapping-phase)
+   - [Localization Phase](#localization-phase)
+   - [Other Interfaces](#other-interfaces)
+   - [Localization Pose Interface](#localization-pose-interface)
+   - [Localization Status Interface](#localization-status-interface)
+   - [Storage Status Interface](#storage-status-interface)
+   - [Module Error Interface](#module-error-interface)
+   - [Mapping Progress Interface](#mapping-progress-interface)
+   - [Mapping State Interface](#mapping-state-interface)
+   - [Mapping Enable Interface](#mapping-enable-interface)
+   - [Parameter Setting Interface](#parameter-setting-interface)
+   - [Map Switching Interface](#map-switching-interface)
+   - [Map Download Interface](#map-download-interface)
+   - [Odometry Upload Interface](#odometry-upload-interface)
+   - [Relocalization Interface](#relocalization-interface)
 4. [ROS2 Service Interfaces](#ros2-service-interfaces)
+   - [Service Categories](#service-categories)
+   - [Start Mapping](#start-mapping)
+   - [Stop Mapping](#stop-mapping)
+   - [Incremental Mapping](#incremental-mapping)
+   - [Switch Map](#switch-map)
+   - [Download Map](#download-map)
+   - [Relocalization](#relocalization)
+   - [Get Current Map Name](#get-current-map-name)
+   - [Get Map List](#get-map-list)
+   - [Delete Map](#delete-map)
+   - [Download Heatmap](#download-heatmap)
 
 ---
 
@@ -19,7 +49,7 @@ V2PRO provides a ROS2 demo package `lx_camera_ros`. The following interface spec
 
 #### 1. Install Qt5
 
-Ensure Qt5 is installed on your host machine. The compilation requires Qt5 Core and Network modules.
+Ensure Qt5 is installed on your computer. The compilation requires Qt5 Core and Network modules.
 
 ```bash
 # For Debian / Ubuntu / Linux Mint (APT)
@@ -62,7 +92,7 @@ Launch the system:
 | -------------------- | ------------------------------------- |
 | **Mapping Enable**   | Start/stop mapping operations         |
 | **Mapping Progress** | Receive mapping completion percentage |
-| **Mapping Status**   | Receive current mapping state         |
+| **Mapping State**    | Receive current mapping state         |
 
 ### Localization Phase
 
@@ -71,7 +101,7 @@ Launch the system:
 | **Localization Pose**   | Receive real-time localization data (x, y, theta) |
 | **Localization Status** | Receive localization state (true/false)           |
 | **Map Switching**       | Switch between stored maps                        |
-| **Relocalization**      | Set pose for relocalization            |
+| **Relocalization**      | Set pose for relocalization                       |
 | **Map Download**        | Download map files from camera                    |
 
 ### Other Interfaces
@@ -95,9 +125,9 @@ Launch the system:
 
 - Position: x, y coordinates
 - Orientation: Quaternion (converted from theta)
-- TF Transform: Broadcasts pose via TF
+- TF Transform: TF transform via x, y coordinates and quaternion
 
-**Verification Command:**
+**Example Command:**
 
 ```bash
 ros2 topic echo /LxCamera_LocationPoseResult
@@ -109,11 +139,11 @@ ros2 topic echo /LxCamera_LocationPoseResult
 
 **Description:** Continuously receives localization status at **1 Hz** indicating whether the system is successfully localized.
 
-**Published Topic:** `LxCamera_LocationResult`
+**ROS Topic:** `LxCamera_LocationResult`
 
 **Message Type:** `std_msgs::msg::Bool`
 
-**Verification Command:**
+**Example Command:**
 
 ```bash
 ros2 topic echo /LxCamera_LocationResult
@@ -125,11 +155,11 @@ ros2 topic echo /LxCamera_LocationResult
 
 **Description:** Continuously receives storage usage percentage at **2 Hz**.
 
-**Published Topic:** `LxCamera_Capacity_Status`
+**ROS Topic:** `LxCamera_Capacity_Status`
 
 **Message Type:** `std_msgs::msg::Float32`
 
-**Verification Command:**
+**Example Command:**
 
 ```bash
 ros2 topic echo /LxCamera_Capacity_Status
@@ -141,11 +171,11 @@ ros2 topic echo /LxCamera_Capacity_Status
 
 **Description:** Continuously receives error module names from the camera.
 
-**Published Topic:** `LxCamera_Module_Error`
+**ROS Topic:** `LxCamera_Module_Error`
 
 **Message Type:** `std_msgs::msg::String`
 
-**Verification Command:**
+**Example Command:**
 
 ```bash
 ros2 topic echo /LxCamera_Module_Error
@@ -155,13 +185,13 @@ ros2 topic echo /LxCamera_Module_Error
 
 ### Mapping Progress Interface
 
-**Description:** Publishes mapping completion percentage after mapping is initiated.
+**Description:** Receives mapping completion percentage after mapping is initiated.
 
-**Published Topic:** `LxCamera_Mapping_Progress`
+**ROS Topic:** `LxCamera_Mapping_Progress` (Range: 0-100)
 
-**Message Type:** `std_msgs::msg::Int32` (Range: 0-100)
+**Message Type:** `std_msgs::msg::Int32`
 
-**Verification Command:**
+**Example Command:**
 
 ```bash
 ros2 topic echo /LxCamera_Mapping_Progress
@@ -169,15 +199,15 @@ ros2 topic echo /LxCamera_Mapping_Progress
 
 ---
 
-### Mapping Status Interface
+### Mapping State Interface
 
-**Description:** Publishes mapping state after mapping is initiated.
+**Description:** Receives mapping state after mapping is initiated.
 
-**Published Topic:** `LxCamera_MappingState`
+**ROS Topic:** `LxCamera_MappingState`
 
 **Message Type:** `std_msgs::msg::Bool`
 
-**Verification Command:**
+**Example Command:**
 
 ```bash
 ros2 topic echo /LxCamera_MappingState
@@ -187,21 +217,21 @@ ros2 topic echo /LxCamera_MappingState
 
 ### Mapping Enable Interface
 
-**Subscribed Topic:** `LxCamera_Mapping`
+**ROS Topic:** `LxCamera_Mapping`
 
 **Message Type:** `std_msgs::msg::String`
 
-**Format:** JSON with two fields:
+**Format:** JSON:
 
 - `status` (bool): `true` to start mapping, `false` to stop
-- `map_name` (string): Map identifier (max 30 characters, alphanumeric only, must not start with a number)
+- `map_name` (string): Map identifier
 
 **Behavior:**
 
 - After sending start command: Camera web interface displays "Mapping in Progress"
-- After sending stop command: Web notification disappears and map appears in map library (requires sufficient robot movement)
+- After sending stop command: Web notification disappears and map appears in map library (requires sufficient vehicle movement)
 
-**Example Commands:**
+**Example Command:**
 
 ```bash
 # Navigate to workspace and source
@@ -219,7 +249,7 @@ ros2 topic pub -1 /LxCamera_Mapping std_msgs/msg/String "{data: '{\"status\": fa
 
 ### Parameter Setting Interface
 
-**Subscribed Topic:** `LxCamera_SetParam`
+**ROS Topic:** `LxCamera_SetParam`
 
 **Message Type:** `std_msgs::msg::String`
 
@@ -244,11 +274,11 @@ ros2 topic pub -1 /LxCamera_SetParam std_msgs/msg/String "{data: '{\"camera_pose
 
 ### Map Switching Interface
 
-**Subscribed Topic:** `LxCamera_SwitchMap`
+**ROS Topic:** `LxCamera_SwitchMap`
 
 **Message Type:** `std_msgs::msg::String`
 
-**Format:** Map name (must exist in camera map library)
+**Format:** JSON, map name (must exist in camera map library)
 
 **Verification:** Refresh camera web interface to confirm map change.
 
@@ -259,20 +289,20 @@ ros2 topic pub -1 /LxCamera_SetParam std_msgs/msg/String "{data: '{\"camera_pose
 cd ~/lx_camera_ros2_ws
 source install/setup.bash
 
-ros2 topic pub -1 /LxCamera_SwitchMap std_msgs/msg/String "{data: 'pf'}"
+ros2 topic pub -1 /LxCamera_SwitchMap std_msgs/msg/String "{data: 'map_name'}"
 ```
 
 ---
 
 ### Map Download Interface
 
-**Subscribed Topic:** `LxCamera_DownloadMap`
+**ROS Topic:** `LxCamera_DownloadMap`
 
 **Message Type:** `std_msgs::msg::String`
 
 **Format:** JSON with two fields:
 
-- `save_path`: Absolute path on host machine (no trailing `/`)
+- `save_path`: Absolute path on computer
 - `map_name`: Existing map name in camera (ZIP format)
 
 **Output:** Creates a ZIP archive containing:
@@ -287,59 +317,71 @@ ros2 topic pub -1 /LxCamera_SwitchMap std_msgs/msg/String "{data: 'pf'}"
 cd ~/lx_camera_ros2_ws
 source install/setup.bash
 
-ros2 topic pub -1 /LxCamera_DownloadMap std_msgs/msg/String "{data: '/home/zsure/LANXIN\,pf'}"
+ros2 topic pub -1 /LxCamera_DownloadMap std_msgs/msg/String "{data: '/home/user/LANXIN\,map_name'}"
 ```
 
 ---
 
 ### Odometry Upload Interface
 
-**Subscribed Topic:** `/odom`
+**ROS Topic:** `odom`
 
 **Message Type:** `nav_msgs::msg::Odometry`
 
-**Description:** Upload wheel odometry data to the camera for localization fusion.
+**Description:** Upload wheel odometry data to the camera.
 
 ---
 
 ### Relocalization Interface
 
-**Subscribed Topic:** `LxCamera_UploadReloc`
+**ROS Topic:** `LxCamera_UploadReloc`
 
 **Message Type:** `geometry_msgs::msg::PoseWithCovarianceStamped`
 
-**Data:** Laser pose containing x, y, yaw (z, pitch, roll typically zero for 2D localization)
+**Data:** Laser pose containing x, y, yaw
 
-**Verification:** Camera web interface updates to reflect the sent position.
+**Verification:** relocalization successful when position updated in camera WebUI.
 
 **Example Command:**
 
 ```bash
-ros2 topic pub -1 /LxCamera_UploadReloc geometry_msgs/msg/PoseWithCovarianceStamped "{
-  header: {frame_id: ''},
-  pose: {
-    pose: {
-      position: {x: 0.0, y: 0.0, z: 0.0},
-      orientation: {x: 0.0, y: 0.0, z: -0.694658, w: 0.71934}
+ros2 topic pub -1 /LxCamera_UploadReloc geometry_msgs/msg/PoseWithCovarianceStamped '{
+  "header": {
+    "frame_id": ""
+  },
+  "pose": {
+    "pose": {
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "orientation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": -0.694658,
+        "w": 0.71934
+      }
     },
-    covariance: [
-      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-      0.0, 0.0, 0.0, 0.0
+    "covariance": [
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0
     ]
   }
-}"
+}'
 ```
 
-> **Note:** Quaternion values must satisfy normalization constraints (x² + y² + z² + w² = 1). Use the [Euler-Quaternion Converter](https://www.itutool.com/tools/euler-quaternion-converter) to convert yaw angles to valid quaternions.
+> **Note:** Quaternion values must satisfy normalization constraints. Use the [Euler-Quaternion Converter](https://www.andre-gaschler.com/rotationconverter/) to convert yaw angles to valid quaternions.
 
 ---
 
 ## ROS2 Service Interfaces
 
-> **Recommendation:** For mapping, map switching, map downloading, and relocalization operations, **service interfaces are strongly recommended** over topic interfaces as they provide synchronous operation success/failure feedback.
+> **Recommendation:** For mapping, map switching, map downloading, and relocalization operations, **service interfaces are strongly recommended** over topic interfaces.
 
 **Usage:** Call via `ros2 service` command. Returns `true` for success, `false` for failure.
 
@@ -355,9 +397,7 @@ ros2 topic pub -1 /LxCamera_UploadReloc geometry_msgs/msg/PoseWithCovarianceStam
 
 ### Start Mapping
 
-**Service Name:** `/LxCamera_Mapping_srv`
-
-**Service Type:** `lx_camera_ros/srv/LxMapping`
+**Service:** `/LxCamera_Mapping_srv`
 
 **Service Definition:**
 
@@ -365,10 +405,10 @@ ros2 topic pub -1 /LxCamera_UploadReloc geometry_msgs/msg/PoseWithCovarianceStam
 bool status      # true: start mapping, false: stop mapping
 string mapname   # Map name (max 30 chars, must not start with number)
 ---
-bool result      # Operation success status
+bool result      # Operation result: true = success, false = failure
 ```
 
-**Example Call:**
+**Example Command:**
 
 ```bash
 ros2 service call /LxCamera_Mapping_srv lx_camera_ros/srv/LxMapping "{
@@ -383,17 +423,15 @@ ros2 service call /LxCamera_Mapping_srv lx_camera_ros/srv/LxMapping "{
 
 **Service Name:** `/LxCamera_ExitMapping_srv`
 
-**Service Type:** `lx_camera_ros/srv/LxCameraExitMappingSrv`
-
 **Service Definition:**
 
 ```yaml
 bool exit_mapping    # true to exit mapping mode
 ---
-bool state          # Success status
+bool state          # Exit mapping state: true = success, false = failure
 ```
 
-**Example Call:**
+**Example Command:**
 
 ```bash
 ros2 service call /LxCamera_ExitMapping_srv lx_camera_ros/srv/LxCameraExitMappingSrv "{
@@ -407,20 +445,18 @@ ros2 service call /LxCamera_ExitMapping_srv lx_camera_ros/srv/LxCameraExitMappin
 
 **Service Name:** `/LxCamera_IncMapping_srv`
 
-**Service Type:** `lx_camera_ros/srv/LxCameraMappingSrv`
-
 **Description:** Performs incremental mapping on existing maps with automatic merging.
 
 **Service Definition:**
 
 ```yaml
-bool status      # true: start, false: stop
-string mapname   # Map name (max 30 chars, must not start with number)
+bool status       # true: start mapping, false: stop mapping
+string mapname    # Map name (max 30 chars, must not start with number)
 ---
-bool result
+bool result       # Operation success status
 ```
 
-**Example Call:**
+**Example Command:**
 
 ```bash
 ros2 service call /LxCamera_IncMapping_srv lx_camera_ros/srv/LxCameraMappingSrv "{
@@ -435,8 +471,6 @@ ros2 service call /LxCamera_IncMapping_srv lx_camera_ros/srv/LxCameraMappingSrv 
 
 **Service Name:** `/LxCamera_SwitchMap_srv`
 
-**Service Type:** `lx_camera_ros/srv/LxSwitchMap`
-
 **Service Definition:**
 
 ```yaml
@@ -445,11 +479,11 @@ string mapname    # Target map name (max 30 chars, must not start with number)
 bool result       # Operation success status
 ```
 
-**Example Call:**
+**Example Command:**
 
 ```bash
 ros2 service call /LxCamera_SwitchMap_srv lx_camera_ros/srv/LxSwitchMap "{
-  mapname: 'zszs999'
+  mapname: 'target_map_name'
 }"
 ```
 
@@ -458,8 +492,6 @@ ros2 service call /LxCamera_SwitchMap_srv lx_camera_ros/srv/LxSwitchMap "{
 ### Download Map
 
 **Service Name:** `/LxCamera_DownloadMap_srv`
-
-**Service Type:** `lx_camera_ros/srv/LxCameraDownloadMapSrv`
 
 **Service Definition:**
 
@@ -470,12 +502,12 @@ string save_path   # Absolute save path (e.g., "/home/lx/map", no trailing "/")
 bool result        # Operation success status
 ```
 
-**Example Call:**
+**Example Command:**
 
 ```bash
 ros2 service call /LxCamera_DownloadMap_srv lx_camera_ros/srv/LxCameraDownloadMapSrv "{
-  mapname: 'TEST_999',
-  save_path: '/home/fr1511b/T/TEST'
+  mapname: 'target_map_name',
+  save_path: '/home/fr1511b/TEST_Path'
 }"
 ```
 
@@ -485,8 +517,6 @@ ros2 service call /LxCamera_DownloadMap_srv lx_camera_ros/srv/LxCameraDownloadMa
 
 **Service Name:** `/LxCamera_UploadReloc_srv`
 
-**Service Type:** `lx_camera_ros/srv/LxUploadReloc`
-
 **Service Definition:**
 
 ```yaml
@@ -495,7 +525,7 @@ geometry_msgs/PoseWithCovarianceStamped pose
 bool result        # Operation success status
 ```
 
-**Example Call:**
+**Example Command:**
 
 ```bash
 ros2 service call /LxCamera_UploadReloc_srv lx_camera_ros/srv/LxUploadReloc "{
@@ -540,8 +570,6 @@ ros2 service call /LxCamera_UploadReloc_srv lx_camera_ros/srv/LxUploadReloc "{
 
 **Service Name:** `/LxCamera_GetCurMapname_srv`
 
-**Service Type:** `lx_camera_ros/srv/LxGetmapname`
-
 **Service Definition:**
 
 ```yaml
@@ -550,7 +578,7 @@ bool get_cur_mapname    # Trigger flag (set true)
 string map_name        # Current active map name
 ```
 
-**Example Call:**
+**Example Command:**
 
 ```bash
 ros2 service call /LxCamera_GetCurMapname_srv lx_camera_ros/srv/LxGetmapname "{
@@ -564,8 +592,6 @@ ros2 service call /LxCamera_GetCurMapname_srv lx_camera_ros/srv/LxGetmapname "{
 
 **Service Name:** `/LxCamera_GetMapList_srv`
 
-**Service Type:** `lx_camera_ros/srv/LxGetmaplist`
-
 **Service Definition:**
 
 ```yaml
@@ -574,7 +600,7 @@ bool get_map_list    # Trigger flag (set true)
 string[] map_list   # Array of available map names
 ```
 
-**Example Call:**
+**Example Command:**
 
 ```bash
 ros2 service call /LxCamera_GetMapList_srv lx_camera_ros/srv/LxGetmaplist "{
@@ -588,8 +614,6 @@ ros2 service call /LxCamera_GetMapList_srv lx_camera_ros/srv/LxGetmaplist "{
 
 **Service Name:** `/LxCamera_EraseMap_srv`
 
-**Service Type:** `lx_camera_ros/srv/LxCameraEraseMapSrv`
-
 **Service Definition:**
 
 ```yaml
@@ -598,11 +622,11 @@ string map_name    # Map name to delete (max 30 chars, must not start with numbe
 bool result       # Deletion success status
 ```
 
-**Example Call:**
+**Example Command:**
 
 ```bash
 ros2 service call /LxCamera_EraseMap_srv lx_camera_ros/srv/LxCameraEraseMapSrv "{
-  map_name: 'TEST888'
+  map_name: 'test_map_name'
 }"
 ```
 
@@ -611,8 +635,6 @@ ros2 service call /LxCamera_EraseMap_srv lx_camera_ros/srv/LxCameraEraseMapSrv "
 ### Download Heatmap
 
 **Service Name:** `/LxCamera_DownloadHeatMap_srv`
-
-**Service Type:** `lx_camera_ros/srv/LxCameraDownloadMapSrv`
 
 **Service Definition:**
 
@@ -627,7 +649,7 @@ bool result        # Operation success status
 
 ```bash
 ros2 service call /LxCamera_DownloadHeatMap_srv lx_camera_ros/srv/LxCameraDownloadMapSrv "{
-  map_name: 'TEST_999',
-  save_path: '/home/fr1511b/T/TEST'
+  map_name: 'test_map_name',
+  save_path: '/home/fr1511b/TEST_Path'
 }"
 ```
