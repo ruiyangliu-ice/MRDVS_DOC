@@ -1,32 +1,6 @@
 # MRDVS V2 Pro HTTP Communication Protocol
 
-The V2PRO supports HTTP (POST, GET) protocols for mapping, map switching, relocalization, real-time location tracking, map upload/download, and other functions. The supported interfaces are listed below:
-
-### Map Operation Interfaces
-
-1.  Start Mapping
-2.  Apply Map (Switch Map)
-3.  Stop Mapping
-4.  Start Incremental Mapping
-5.  Stop Incremental Mapping
-6.  Get Local Map List
-7.  Download Map (including visual map)
-8.  Upload Map (To Camera)
-9.  Get Laser Contour Map (Get Map Package From the Host)
-
-### Runtime Operation Interfaces
-
-1.  Set Camera Height
-2.  Relocalization
-3.  Get Real-time Pose
-
-### Other Configuration and Management Interfaces
-
-1.  Restart Camera Program
-2.  Reboot Device
-3.  Program Update
-4.  Get Program Version
-5.  Get Basic Device Information
+The V2PRO supports HTTP (POST, GET) protocols for mapping, map switching, relocalization, real-time location tracking, map upload/download, and other functions.
 
 ---
 
