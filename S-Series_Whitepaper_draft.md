@@ -1932,6 +1932,8 @@ The S11 is a compact, fully solid-state dToF RGB-D camera offered in three inter
 
 ## Appendix B: Certifications and Compliance
 
+待附上证书链接附件，Google drive
+
 ### B.1 CE Certification
 
 - **Certificate Number:** AE 50684372 0001
@@ -1989,20 +1991,7 @@ The S11 is a compact, fully solid-state dToF RGB-D camera offered in three inter
 
 ## Appendix C: Ordering Information
 
-### C.1 Model Numbers
-
-| Model | Part Number | Description |
-|-------|-------------|-------------|
-| S10 | [to be confirmed] | Standard dToF camera, Gigabit Ethernet, 90 degrees x 60 degrees FOV |
-| S10 Lite | [to be confirmed] | dToF camera, wide 120 degrees x 80 degrees FOV, no RGB |
-| S10 Pro | [to be confirmed] | Enhanced dToF camera with RGB, 61 degrees x 90 degrees FOV, extended range to 17 m |
-| S11-ETH | [to be confirmed] | Compact dToF RGB-D camera, Gigabit Ethernet, 140 degrees x 56 degrees FOV |
-| S11-USB | [to be confirmed] | Compact dToF RGB-D camera, USB 3.0 interface |
-| S11-MIPI | [to be confirmed] | Compact dToF camera module, MIPI interface, 33 x 18 x 13 mm |
-
-> **Note:** Exact part numbers and model designations (e.g., LXPS-SA730-79I-940B format) may vary by region and configuration. Contact MRDVS sales or your authorized distributor for region-specific part numbers.
-
-### C.2 Standard Accessories
+### C.1 Standard Accessories
 
 | Accessory | Part Number | Description |
 |-----------|-------------|-------------|
@@ -2010,14 +1999,6 @@ The S11 is a compact, fully solid-state dToF RGB-D camera offered in three inter
 | Ethernet Cable | [to be confirmed] | Shielded Cat 6/7 cable, Gigabit Ethernet rated |
 | Mounting Bracket | [to be confirmed] | Standard L-bracket for S10 series |
 | USB Cable | [to be confirmed] | USB 3.0 Type-C cable (for S11-USB) |
-
-### C.3 Optional Accessories
-
-- Extended cable sets (5 m, 10 m, 20 m) for industrial deployments
-- Custom mounting brackets and adapter plates
-- Calibration boards for multi-camera extrinsic calibration
-- Protective enclosures and lens covers for harsh environments
-- GMSL interface module (for S10, requires inquiry)
 
 > **Note:** For exact part numbers, availability, and pricing, contact MRDVS sales or your authorized distributor.
 
