@@ -2028,25 +2028,22 @@ The S11 is a compact, fully solid-state dToF RGB-D camera offered in three inter
 ### D.1 Global Headquarters
 
 - **Company:** MRDVS Technology Co., Ltd.
-- **Website:** https://www.mrdvs.cn/
+- **Website:** https://www.mrdvs.com/
 - **S-Series Product Page:** https://mrdvs.com/s-series-obstacle-avoidance-robot-cameras/
 - **Knowledge Base:** https://hub.mrdvs.cn/
-- **Address:** 1st Floor, No. 5 Building, Phase II of High-end Manufacturing Industrial Park, No. 1177 Xin'an Road, High-tech Zone, Wuxing District, Huzhou, Zhejiang, 313000, P.R. China
-- **Sales and Technical Support:** Contact via the MRDVS website or your regional authorized distributor
+- **Address:** No.902, Building No.7, Wenyi West Road No.1818-2, Yuhang District, Hangzhou City, Zhejiang Province, China
 
 ### D.2 Technical Support Resources
 
-- **Online Knowledge Base:** https://hub.mrdvs.cn/ - Product documentation, FAQs, deployment guides, and application notes
-- **GitHub SDK Repository:** https://github.com/Lanxin-MRDVS/CameraSDK/releases - Camera SDK releases, sample code, and API documentation
-- **Software Downloads:** LxCameraViewer host configuration tool and firmware updates available via the MRDVS knowledge base portal
-- **Documentation:** Product manuals, integration guides, SDK API references, and algorithm configuration guides
+- **Online Knowledge Base (Chinese):** https://hub.mrdvs.cn/ - Product documentation, FAQs, deployment guides, and application notes
+- **GitHub SDK Repository:** https://github.com/Lanxin-MRDVS/CameraSDK/ - Camera SDK releases, sample code, and API documentation
+- **Software Downloads:** https://github.com/Lanxin-MRDVS/CameraSDK/releases LxCameraViewer host configuration tool and firmware updates available via the MRDVS knowledge base portal
+- **Documentation:** 待完善 Product manuals, integration guides, SDK API references, and algorithm configuration guides
 
 ### D.3 Community and Resources
 
 - **ROS / ROS2 Support:** Open-source driver nodes available for integration with ROS and ROS2 robotics frameworks
-- **Sample Code:** C/C++, Python, and Java HTTP wrapper examples provided with the SDK
-- **Video Tutorials:** Available via the MRDVS support portal and knowledge base
-- **Multi-language Support:** SDK and documentation support English and Chinese interfaces
+- **Sample Code:** 待完善 C/C++, Python, and HTTP wrapper examples provided with the SDK
 
 ---
 
