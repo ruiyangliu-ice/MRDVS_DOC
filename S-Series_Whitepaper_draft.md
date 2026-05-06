@@ -2054,4 +2054,4 @@ The S11 is a compact, fully solid-state dToF RGB-D camera offered in three inter
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | May 2026 | MRDVS Technical Team | Initial release |
+| 1.0 | March 2026 | MRDVS Marketing Team | Draft release |
