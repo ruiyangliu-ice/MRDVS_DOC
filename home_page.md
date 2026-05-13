@@ -1,91 +1,57 @@
-<!-- MRDVS GitHub Organization README Template -->
-<!-- Image placeholders: Replace with actual company assets -->
-
 <p align="center">
-  <!-- Light mode banner -->
-  <img src="https://s7.ezgif.com/tmp/ezgif-7e88b310008d069d.webp" alt="MRDVS - 3D Vision for Intelligent Robotics"/>
+<img width="1037" height="360" alt="banner" src="https://github.com/user-attachments/assets/8318add1-cb50-47f3-9bb0-cdbe53403457" /><p align="center">
 </p>
 
-<h1 align="center">MRDVS SDK</h1>
+<h1 align="center">MRDVS - Mobile Robot Vision Expert</h1>
 
 <p align="center">
-  <b>3D Vision SDK for Mobile Robots</b>
+  <b>Empowering robots to comprehend the world</b>
 </p>
-
-<p align="center">
-  <a href="https://github.com/mrdvs/mrdvs-sdk/releases/latest">
-    <img src="https://img.shields.io/github/v/release/mrdvs/mrdvs-sdk?sort=semver&style=flat-square&color=brightgreen" alt="Latest Release">
-  </a>
-  <a href="https://github.com/mrdvs/mrdvs-sdk/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/mrdvs/mrdvs-sdk?style=flat-square&color=green" alt="License">
-  </a>
-  <a href="https://github.com/mrdvs/mrdvs-sdk/issues">
-    <img src="https://img.shields.io/github/issues/mrdvs/mrdvs-sdk?style=flat-square&color=orange" alt="Issues">
-  </a>
-  <a href="https://github.com/mrdvs/mrdvs-sdk/stargazers">
-    <img src="https://img.shields.io/github/stars/mrdvs/mrdvs-sdk?style=flat-square&color=yellow" alt="Stars">
-  </a>
-  <br>
-  <a href="https://www.mrdvs.com">
-    <img src="https://img.shields.io/badge/Website-mrdvs.com-0066CC?style=flat-square&logo=google-chrome&logoColor=white" alt="Website">
-  </a>
-  <a href="https://docs.mrdvs.com">
-    <img src="https://img.shields.io/badge/Docs-docs.mrdvs.com-2D8C3F?style=flat-square&logo=read-the-docs&logoColor=white" alt="Documentation">
-  </a>
-</p>
-
----
-
 <p align="center">
   <a href="https://www.mrdvs.com">Website</a> ·
-  <a href="https://docs.mrdvs.com">Docs</a> ·
-  <a href="https://github.com/mrdvs/mrdvs-sdk/releases">Releases</a> ·
-  <a href="#quick-start">Quick Start</a> ·
-  <a href="#community">Community</a>
+  <a href="https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document">Docs</a> ·
+  <a href="https://github.com/Lanxin-MRDVS/CameraSDK/releases">Releases</a>
 </p>
 
 ---
 
 ## What's New
 
-**MRDVS SDK v2.5 is now available.**
+**MRDVS SDK v2.4.60 is now available.**
 
-This release introduces Semantic SLAM 3.0 with 40% improved accuracy in low-texture environments, support for the S-Series Pro camera (up to 18m obstacle detection range), zero-copy intra-process communication for ROS 2, and multi-target pallet detection with mixed-scene adaptation for the H-Series. See the [release notes](https://github.com/mrdvs/mrdvs-sdk/releases) for details.
+MRDVS SDK v2.4.60 is now available with breaking compatibility changes (installation path moved to `MRDVS`, `LX_E_NOT_SUPPORT` renamed to `LX_W_NOT_SUPPORT`, and `GetDeviceList` header fix), plus new fisheye intrinsics, full IMU and radar (XYZIRT) support, sparse RGB-D alignment, packet-loss frame filling, and split 3D/2D frame getters. This release also fixes memory leaks and point cloud exceptions, optimizes PTP sync to ±1ms, expands GPU acceleration, adds rolling logs, and ships updated firmware for S10, V2 Pro, and M-Series cameras. See the [release notes](https://github.com/Lanxin-MRDVS/CameraSDK/releases/tag/SDK-V2.4.60-SP) for details.
 
 ---
 
 ## About MRDVS
-
 <p align="center">
-  <img src="doc/img/logo.png" alt="MRDVS Logo" width="20%"/>
+  <img width="50%" height="50%" alt="MRDVS logo" src="https://github.com/user-attachments/assets/3a36a743-86e1-4bac-98d4-7f1c70a955d4" />
 </p>
 
-**MRDVS (Zhejiang Meirweishi Technology Co., Ltd.)** develops 3D vision sensors and AI-powered perception solutions for mobile robots. Since 2016, we have shipped tens of thousands of 3D vision sensors and established partnerships with leading mobile robotics companies worldwide.
-
-Our mission is to enable robots to perceive, understand, and navigate the world with human-like 3D vision.
+**MRDVS** focus on industry‑leading 3D vision mobile robot company in Chinese mainland, with large‑scale deployment in industrial applications. We are committed to empowering mobile robots through 3D vision perception technology and delivering value to end customers with industrial mobile robots as the deployment platform, thereby achieving an end-to-end closed loop from AI to the physical world.
 
 ---
 
 ## Why MRDVS
 
-| Feature | Capability |
+**We ship perception hardware that actually ships.**  
+MRDVS is the vision division of Lanxin Robotics. Since 2016 we have deployed tens of thousands of 3D sensors in production environments—from high-bay warehouses to outdoor AGV yards.
+
+| What you get | Why it matters |
 |:---|:---|
-| **Field of View** | Up to 270 x 70 (H x V) |
-| **Depth Resolution** | Up to 1608 x 280 |
-| **Frame Rate** | >15 fps depth + RGB |
-| **Maximum Range** | 50m with +/-3cm accuracy |
-| **Onboard AI** | Up to 6.0 TOPS, no external host required |
-| **Multi-Modal Fusion** | Spatially aligned RGB + point cloud with semantic segmentation |
-| **Ingress Protection** | IP65/IP67, -20 C to 60 C operating temperature |
+| **All-in-One Perception SDK** | Depth streaming, obstacle avoidance, and pallet recognition. |
+| **Edge-First Design** | Up to 6.0 TOPS onboard compute. Many workloads (navigation, detection, measurement) run on the camera itself—no external host PC required. |
+| **Hardened for Industry** | IP54/IP67, -20 °C to 60 °C operating range. Built for warehouses with high-bay racking, steel structures, and dynamic floor layouts. |
+| **Production-Ready Algorithms** | Pallet detection, volume measurement, bin occupancy, and people counting ship as built-in modules, not research demos. |
+| **C++ / Python / ROS 2** | Full language bindings with consistent APIs. |
 
 ---
 
 ## Product Lineup
 
-### S-Series -- Visual Obstacle Detection
-
-<p align="center">
-  <img src="doc/img/product-s-series.png" alt="S-Series Camera" width="50%"/>
+### S-Series -- dToF Visual Obstacle Detection
+<p align="left">
+  <img width="50%" height="50%" alt="S" src="https://github.com/user-attachments/assets/60f229c2-181e-496f-891f-b56ff06e97bd" />
 </p>
 
 Real-time 3D environmental perception with intelligent obstacle classification and dynamic collision avoidance.
@@ -96,19 +62,19 @@ Real-time 3D environmental perception with intelligent obstacle classification a
 | Customizable 3D avoidance zones | Yes |
 | Semantic obstacle classification | Yes (person, forklift, pallet, etc.) |
 | Communication Interfaces | I/O, Ethernet, USB 3.0 |
-| Representative Models | S-510, S-510 Pro |
+| Representative Models | S 10, S 10 Pro, S10 Ultra |
 
-**Applications:** AMR/AGV obstacle avoidance, forklift collision prevention, human safety zones, fork tip protection
+**Applications:** AMR/AGV obstacle avoidance, forklift collision prevention, human safety zones, volume measurement
 
 ---
 
-### M-Series -- Visual Docking & Measurement
+### M-Series -- iToF Visual Docking & Measurement
 
-<p align="center">
-  <img src="doc/img/product-m-series.png" alt="M-Series Camera" width="50%"/>
+<p align="left">
+  <img width="50%" height="50%" alt="M-Series" src="https://github.com/user-attachments/assets/cf9dd7de-5f99-4013-9532-937a44f385e0" />
 </p>
 
-High-precision depth sensing for automated docking, dimensioning, and warehouse operations.
+High-fidelity volumetric sensing for precise short-range object recognition and interaction.
 
 | Specification | Value |
 |:---|:---|
@@ -121,13 +87,13 @@ High-precision depth sensing for automated docking, dimensioning, and warehouse 
 
 ---
 
-### V-Series -- Visual Navigation
+### V-Series -- Fusion-SLAM RTLS
 
-<p align="center">
-  <img src="doc/img/product-v-series.png" alt="V-Series Camera" width="50%"/>
+<p align="left">
+  <img width="50%" height="50%" alt="v" src="https://github.com/user-attachments/assets/cf8a6c07-10cc-49c9-888c-a24f1a990b81" />
 </p>
 
-Ceiling-facing semantic SLAM for infrastructure-free robot navigation in large-scale deployments.
+Integrated Spatial Intelligence Module Fusing Perception & RTLS for AGVs and Forklifts.
 
 | Specification | Value |
 |:---|:---|
@@ -138,46 +104,6 @@ Ceiling-facing semantic SLAM for infrastructure-free robot navigation in large-s
 
 **Applications:** AMR/AGV SLAM navigation, large-scale fleet coordination, high-dynamic factory environments
 
-**Deployment Highlight:** A photovoltaic manufacturing facility operates 500+ AGVs across 80,000 m using the V-Series visual positioning module with zero downtime since deployment.
-
----
-
-### H-Series -- Visual Picking & Recognition
-
-<p align="center">
-  <img src="doc/img/product-h-series.png" alt="H-Series Camera" width="50%"/>
-</p>
-
-High-precision recognition camera for robotic grasping and intelligent sorting.
-
-| Specification | Value |
-|:---|:---|
-| Recognition Accuracy | +/-0.1mm |
-| Onboard Compute | 6.0 TOPS |
-| Working Distance | 300-600mm |
-| Weight | 400g |
-| Representative Model | H3310 |
-
-**Applications:** Precision grasping positioning, depalletizing, bin picking, produce recognition, intelligent sorting
-
----
-
-## Core Technologies
-
-```
-+------------------+ +------------------+ +------------------+ +------------------+
-|  Depth Sensing   | |   AI Semantic    | | Visual Navigation | |  Vision-based    |
-|                  | |     Engine       | |                  | |   Measurement    |
-+------------------+ +------------------+ +------------------+ +------------------+
-| - Stereo vision  | | - Semantic       | | - Semantic SLAM  | | - Pallet         |
-| - iToF           | |   segmentation   | | - Ceiling        | |   detection      |
-| - RGB-D fusion   | | - Semantic       | |   navigation     | | - Volume         |
-| - Point cloud    | |   recognition    | | - IMU fusion     | |   measurement    |
-|   generation     | | - Human/obstacle | | - Multi-robot    | | - Bin occupancy  |
-|                  | |   detection      | |   coordination   | |   detection      |
-+------------------+ +------------------+ +------------------+ +------------------+
-```
-
 ---
 
 ## Quick Start
@@ -186,86 +112,66 @@ High-precision recognition camera for robotic grasping and intelligent sorting.
 
 **Linux (Ubuntu)**
 ```bash
-wget https://github.com/mrdvs/mrdvs-sdk/releases/download/v2.5.0/mrdvs-sdk-2.5.0-linux.run
-chmod +x mrdvs-sdk-2.5.0-linux.run
-sudo ./mrdvs-sdk-2.5.0-linux.run
+wget https://github.com/Lanxin-MRDVS/CameraSDK待补充
+chmod +x 包名
+sudo ./source install.sh
 ```
 
 **Windows**
 ```powershell
 # Download and run the installer from:
-# https://github.com/mrdvs/mrdvs-sdk/releases
-```
-
-**NVIDIA Jetson**
-```bash
-wget https://github.com/mrdvs/mrdvs-sdk/releases/download/v2.5.0/mrdvs-sdk-2.5.0-jetson.run
-sudo ./mrdvs-sdk-2.5.0-jetson.run
+# https://github.com/Lanxin-MRDVS/CameraSDK待补充
 ```
 
 ### Run Your First Program
 
 ```bash
-git clone https://github.com/mrdvs/mrdvs-samples.git
-cd mrdvs-samples
-mkdir build && cd build
-cmake .. && make -j4
-./samples/pointcloud_viewer
+demo
 ```
 
 ### C++ Example
 
 ```cpp
-#include <mrdvs/mrdvs.hpp>
+#include <librealsense2/rs.hpp>
 #include <iostream>
 
 int main() {
-    mrdvs::Device device;
-    device.connect(mrdvs::DeviceType::S510);
-
-    mrdvs::StreamConfig config;
-    config.depth_resolution = {640, 480};
-    config.fps = 15;
-    device.configure(config);
-
-    device.start();
+    rs2::pipeline p;                 // Top-level API for streaming & processing frames
+    p.start();                       // Configure and start the pipeline
 
     while (true) {
-        auto frames = device.capture();
-        auto depth = frames.get_depth_frame();
+        rs2::frameset frames = p.wait_for_frames();        // Block until frames arrive
+        rs2::depth_frame depth = frames.get_depth_frame(); // Get depth frame
+        if (!depth) continue;
 
-        float dist = depth.get_distance(depth.width() / 2, depth.height() / 2);
-        std::cout << "Distance to center pixel: " << dist << " m\r" << std::flush;
+        int w = depth.get_width(), h = depth.get_height();
+        float dist = depth.get_distance(w/2, h/2);         // Distance to center pixel
+        std::cout << "The camera is facing an object " << dist << " meters away\r";
     }
-
-    device.stop();
-    return 0;
 }
 ```
 
 ### Python Example
 
 ```python
-import mrdvs
+import pyrealsense2 as rs
 
-device = mrdvs.Device()
-device.connect(mrdvs.DeviceType.S510)
-
-config = mrdvs.StreamConfig()
-config.depth_resolution = (640, 480)
-config.fps = 15
-device.configure(config)
-
-device.start()
+pipeline = rs.pipeline() # Create a pipeline
+pipeline.start() # Start streaming
 
 try:
     while True:
-        frames = device.capture()
-        depth = frames.get_depth_frame()
-        dist = depth.get_distance(depth.width // 2, depth.height // 2)
-        print(f"Distance to center pixel: {dist:.3f} m", end="\r")
+        frames = pipeline.wait_for_frames()
+        depth_frame = frames.get_depth_frame()
+        if not depth_frame:
+            continue
+
+        width, height = depth_frame.get_width(), depth_frame.get_height()
+        dist = depth_frame.get_distance(width // 2, height // 2)
+        print(f"The camera is facing an object {dist:.3f} meters away", end="\r")
+
 finally:
-    device.stop()
+    pipeline.stop() # Stop streaming
 ```
 
 ---
@@ -276,28 +182,16 @@ finally:
 
 | Platform | Versions | Status |
 |:---:|:---|:---:|
-| <img src="https://img.shields.io/badge/Ubuntu-22.04%2F20.04-E95420?logo=ubuntu&logoColor=white" height="24"/> | 22.04 LTS / 20.04 LTS | Supported |
+| <img src="https://img.shields.io/badge/Ubuntu-26.04%2F22.04-E95420?logo=ubuntu&logoColor=white" height="24"/> | 26.04 LTS / 24.04 LTS | Supported |
 | <img src="https://img.shields.io/badge/Windows-10%2F11-0078D4?logo=windows&logoColor=white" height="24"/> | 10 / 11 | Supported |
-| <img src="https://img.shields.io/badge/NVIDIA_Jetson-JetPack%205%2F6-76B900?logo=nvidia&logoColor=white" height="24"/> | Nano / TX2 / Xavier / Orin | Supported |
 
 ### Language Bindings
 
 | Language | Status | API Docs |
 |:---:|:---:|:---:|
-| <img src="https://img.shields.io/badge/C++-00599C?logo=c%2B%2B&logoColor=white" height="24"/> | Native | [C++ API](https://docs.mrdvs.com/api/cpp) |
-| <img src="https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white" height="24"/> | Full binding | [Python API](https://docs.mrdvs.com/api/python) |
-| <img src="https://img.shields.io/badge/ROS_2-Humble%2FIron-22314E?logo=ros&logoColor=white" height="24"/> | Official driver | [ROS 2 Docs](https://docs.mrdvs.com/ros2) |
-| <img src="https://img.shields.io/badge/C%23-512BD4?logo=csharp&logoColor=white" height="24"/> | Planned | - |
-
-### Third-Party Integrations
-
-| Platform | Integration | Docs |
-|:---|:---|:---|
-| NVIDIA Isaac | Certified sensor | [Guide](doc/integration_isaac.md) |
-| OpenCV | Built-in interface | [Guide](doc/integration_opencv.md) |
-| PCL (Point Cloud Library) | Point cloud format compatible | [Samples](samples/pcl) |
-| Unity | SDK plugin | [Guide](doc/integration_unity.md) |
-| Halcon | GenTL interface | [Guide](doc/integration_halcon.md) |
+| <img src="https://img.shields.io/badge/C++-00599C?logo=c%2B%2B&logoColor=white" height="24"/> | Native | [C++ API](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
+| <img src="https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white" height="24"/> | Full binding | [Python API](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
+| <img src="https://img.shields.io/badge/ROS_2-Humble%2FIron-22314E?logo=ros&logoColor=white" height="24"/> | Official driver | [ROS 2 Docs](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
 
 ---
 
@@ -307,31 +201,28 @@ finally:
 
 | Resource | Description |
 |:---|:---|
-| [MRDVS SDK](https://github.com/mrdvs/mrdvs-sdk/releases) | Core SDK (C++ / Python) |
-| [MRDVS ROS2](https://github.com/mrdvs/mrdvs-ros2) | Official ROS 2 driver |
-| [MRDVS Tools](https://github.com/mrdvs/mrdvs-tools) | Camera config & firmware update tools |
+| [MRDVS SDK](https://github.com/Lanxin-MRDVS/CameraSDK/releases) | Core SDK (C++ / Python) |
+| [MRDVS ROS2](https://github.com/Lanxin-MRDVS/CameraSDK/releases) | Official ROS 2 driver |
+| [MRDVS Tools](https://github.com/Lanxin-MRDVS/CameraSDK/releases) | Camera config & firmware update tools |
 
 ### Documentation
 
 | Resource | Link |
 |:---|:---|
-| Online Documentation | [docs.mrdvs.com](https://docs.mrdvs.com) |
-| C++ API Reference | [docs.mrdvs.com/api/cpp](https://docs.mrdvs.com/api/cpp) |
-| Python API Reference | [docs.mrdvs.com/api/python](https://docs.mrdvs.com/api/python) |
-| Product Datasheets | [www.mrdvs.com/downloads](https://www.mrdvs.com/downloads) |
+| Online Documentation | [文档文件夹](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
+| C++ API Reference | [API文件夹](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
+| Python API Reference | [Python示例代码](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
+| Product Datasheets | [产品资料](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
 
 ### Code Samples
 
 | Sample | Languages | Description |
 |:---|:---:|:---|
-| [Basic Capture](samples/basic_capture) | C++ / Python | Connect camera and stream depth/RGB |
-| [Point Cloud Viewer](samples/pointcloud_viewer) | C++ | Real-time 3D point cloud visualization |
-| [Obstacle Avoidance](samples/obstacle_avoidance) | C++ / Python | Dynamic avoidance zone configuration |
-| [Pallet Detection](samples/pallet_detection) | Python | M-Series pallet detection and pose estimation |
-| [SLAM Navigation](samples/slam_navigation) | Python / ROS 2 | V-Series semantic SLAM mapping |
-| [Multi-Camera Sync](samples/multi_camera) | C++ | Multi-camera synchronized capture |
-| [Precision Grasping](samples/precise_grasping) | Python | H-Series pick-and-place positioning |
-| [ROS 2 Navigation](samples/ros2_navigation) | ROS 2 | Complete ROS 2 navigation integration |
+| [C++](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) | C++ / Python | 应用描述 |
+| [C++](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) | C++ / Python | 应用描述 |
+| [C++](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) | C++ / Python | 应用描述 |
+| [C++](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) | C++ / Python | 应用描述 |
+| [C++](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) | C++ / Python | 应用描述 |
 
 ---
 
@@ -342,9 +233,8 @@ finally:
 | Obstacle Avoidance | Real-time 3D perception with intelligent obstacle classification | S-Series |
 | SLAM Navigation | Ceiling-facing semantic SLAM for large-scale fleet navigation | V-Series |
 | Automated Docking | Automatic pallet pose estimation for precision docking | M-Series |
-| Dimensioning | Single-camera parcel volume measurement | M-Series |
+| Dimensioning | Single-camera parcel volume measurement | M & S Series |
 | Bin Occupancy Detection | 3D bin state detection, no training required | M-Series |
-| Precision Picking | +/-0.1mm accuracy positioning for robotic grasping | H-Series |
 | Safety Monitoring | Human detection and dynamic obstacle protection | S-Series |
 | Rack Safety | Pallet skew/tilt/deformation detection | M-Series |
 
@@ -354,52 +244,19 @@ finally:
 
 | Specification | S-Series | M-Series | V-Series | H-Series |
 |:---|:---|:---|:---|:---|
-| **Primary Function** | Obstacle Detection | Docking & Measurement | Navigation | Precision Picking |
-| **Depth Technology** | Stereo / iToF | iToF / Stereo | Stereo + RGB-D | iToF |
-| **Depth Resolution** | 640x480 - 1280x720 | 640x480 | 640x480 | 1280x1024 |
-| **Depth Frame Rate** | 15-30 fps | 15-25 fps | 15 fps | 15 fps |
-| **Field of View (H x V)** | 90x70 - 270x70 | 87x67 | 60x45 | 57x45 |
-| **Operating Range** | 0.3m - 18m | 0.2m - 5m | 6m - 12m (ceiling) | 0.3m - 0.6m |
-| **Depth Accuracy** | +/-1% @ 1m | +/-3mm @ 1m | +/-2cm @ 10m | +/-0.1mm |
-| **Onboard Compute** | - | - | 6.0 TOPS | 6.0 TOPS |
-| **Ingress Protection** | IP65 / IP67 | IP65 | IP54 | IP65 |
-| **Operating Temperature** | -20 C to 60 C | -20 C to 60 C | -10 C to 50 C | 0 C to 50 C |
-| **Interface** | Ethernet / USB 3.0 | Ethernet / USB 3.0 | Ethernet | Ethernet / USB 3.0 |
+| **按需添加** | 按需添加 | 按需添加 | 按需添加 | 按需添加 |
 
-See [product datasheets](https://www.mrdvs.com/downloads) for detailed specifications.
-
----
-
-## Community
-
-### Support Channels
-
-| Channel | Description | Link |
-|:---|:---|:---|
-| Documentation | Product and development docs | [docs.mrdvs.com](https://docs.mrdvs.com) |
-| GitHub Issues | Bug reports and feature requests | [New Issue](https://github.com/mrdvs/mrdvs-sdk/issues/new/choose) |
-| Discussion Forum | Community Q&A and knowledge sharing | [Discussions](https://github.com/orgs/mrdvs/discussions) |
-| Email | Direct support contact | support@mrdvs.com |
-
-### Contributing
-
-Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
----
-
-## License
-
-This project is licensed under the Apache License 2.0. See [LICENSE](LICENSE) for details.
+See [product datasheets](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) for detailed specifications.
 
 ---
 
 <p align="center">
-  <b>Enabling robots to see and understand the world.</b>
+  <b>Empowering robots to comprehend the world</b>
 </p>
 
 <p align="center">
-  <a href="https://www.mrdvs.com" target="_blank">www.mrdvs.com</a> ·
-  <a href="mailto:support@mrdvs.com" target="_blank">support@mrdvs.com</a>
+  <a href="https://mrdvs.com" target="_blank">mrdvs.com</a> ·
+  <a href="mailto:service@mrdvs.com" target="_blank">service@mrdvs.com</a>
 </p>
 
 <p align="center">
@@ -407,7 +264,7 @@ This project is licensed under the Apache License 2.0. See [LICENSE](LICENSE) fo
   &nbsp;
   <a href="https://www.linkedin.com/company/mrdvs" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" height="28"/></a>
   &nbsp;
-  <a href="https://www.youtube.com/@mrdvs" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white" height="28"/></a>
+  <a href="https://www.youtube.com/@MRDVS-2024" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white" height="28"/></a>
 </p>
 
 ---
