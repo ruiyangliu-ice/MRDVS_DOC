@@ -3,9 +3,9 @@
 
 <p align="center">
   <!-- Light mode banner -->
-  <img src="doc/img/banner-light.png#gh-light-mode-only" alt="MRDVS - 3D Vision for Intelligent Robotics" width="80%"/>
+  <img src="https://s7.ezgif.com/tmp/ezgif-7e88b310008d069d.webp" alt="MRDVS - 3D Vision for Intelligent Robotics" width="80%"/>
   <!-- Dark mode banner -->
-  <img src="doc/img/banner-dark.png#gh-light-mode-only" alt="MRDVS - 3D Vision for Intelligent Robotics" width="80%"/>
+  <img src="https://s7.ezgif.com/tmp/ezgif-7e88b310008d069d.webp" alt="MRDVS - 3D Vision for Intelligent Robotics" width="80%"/>
   <br><br>
 </p>
 
