@@ -181,17 +181,17 @@ finally:
 ### Operating Systems
 
 | Platform | Versions | Status |
-|:---:|:---|:---:|
+|:---|:---|:---:|
 | <img src="https://img.shields.io/badge/Ubuntu-26.04%2F22.04-E95420?logo=ubuntu&logoColor=white" height="24"/> | 26.04 LTS / 24.04 LTS | Supported |
 | <img src="https://img.shields.io/badge/Windows-10%2F11-0078D4?logo=windows&logoColor=white" height="24"/> | 10 / 11 | Supported |
 
 ### Language Bindings
 
 | Language | Status | API Docs |
-|:---:|:---:|:---:|
+|:---|:---:|:---:|
 | <img src="https://img.shields.io/badge/C++-00599C?logo=c%2B%2B&logoColor=white" height="24"/> | Native | [C++ API](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
 | <img src="https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white" height="24"/> | Full binding | [Python API](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
-| <img src="https://img.shields.io/badge/ROS_2-Humble%2FIron-22314E?logo=ros&logoColor=white" height="24"/> | Official driver | [ROS 2 Docs](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
+| <img src="https://img.shields.io/badge/ROS_2-22314E?logo=ros&logoColor=white" height="24"/> | Official driver | [ROS 2 Docs](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
 
 ---
 
