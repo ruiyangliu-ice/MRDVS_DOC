@@ -260,15 +260,9 @@ See [product datasheets](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/D
 </p>
 
 <p align="center">
-  <a href="https://github.com/mrdvs" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" height="28"/></a>
+  <a href="https://github.com/Lanxin-MRDVS/" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white" height="28"/></a>
   &nbsp;
   <a href="https://www.linkedin.com/company/mrdvs" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=white" height="28"/></a>
   &nbsp;
   <a href="https://www.youtube.com/@MRDVS-2024" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=white" height="28"/></a>
-</p>
-
----
-
-<p align="center">
-  <sub>Copyright 2024-2025 Zhejiang Meirweishi Technology Co., Ltd. (MRDVS). All Rights Reserved.</sub>
 </p>
