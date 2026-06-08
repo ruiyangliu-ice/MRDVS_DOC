@@ -136,7 +136,6 @@ Real-time 3D environmental perception with intelligent obstacle classification a
 |:---|:---|
 | Detection Range | Up to 18m |
 | Customizable 3D avoidance zones | Yes |
-| Semantic obstacle classification | Yes (person, forklift, pallet, etc.) |
 | Communication Interfaces | I/O, Ethernet, USB 3.0 |
 | Representative Models | S 10, S 10 Pro, S10 Ultra |
 
@@ -174,7 +173,6 @@ Integrated Spatial Intelligence Module Fusing Perception & RTLS for AGVs and For
 | Specification | Value |
 |:---|:---|
 | Navigation Method | Ceiling feature recognition + IMU fusion |
-| Working Range | 6-12m ceiling height |
 | Onboard Compute | 6.0 TOPS (no external PC required) |
 | Feature Detection Range | Up to 12m stable ceiling feature detection |
 
