@@ -196,15 +196,11 @@ Integrated Spatial Intelligence Module Fusing Perception & RTLS for AGVs and For
 
 ## Use Cases
 
-| Application | Description | Product |
-|:---|:---|:---:|
-| Obstacle Avoidance | Real-time 3D perception with intelligent obstacle classification | S-Series |
-| SLAM Navigation | Ceiling-facing semantic SLAM for large-scale fleet navigation | V-Series |
-| Automated Docking | Automatic pallet pose estimation for precision docking | M-Series |
-| Dimensioning | Single-camera parcel volume measurement | M & S Series |
-| Bin Occupancy Detection | 3D bin state detection, no training required | M-Series |
-| Safety Monitoring | Human detection and dynamic obstacle protection | S-Series |
-| Rack Safety | Pallet skew/tilt/deformation detection | M-Series |
+| ![Mobile Robots](https://github.com/user-attachments/assets/62547909-2d18-4b5c-9a1a-25662141bd1c) | ![Logistics & Warehousing Automation](https://github.com/user-attachments/assets/0d36c964-382c-4949-a36c-4dc960aef995) | ![Lawnmowers](https://github.com/user-attachments/assets/027f1e02-bf6e-41d8-b69b-ae14caac57db) |
+|:---:|:---:|:---:|
+| Mobile Robots | Logistics & Warehousing Automation | Lawnmowers |
+| ![Low-Speed Unmanned Vehicles](https://github.com/user-attachments/assets/2e102944-b175-44d0-93e7-aee0a0f87768) | ![Embodied AI](https://github.com/user-attachments/assets/60d97b2a-26a6-4b91-9622-8343a9b28b5c) | ![Drones](https://github.com/user-attachments/assets/ba9f2b9d-48b3-4198-a68a-cee14666e043) |
+| Low-Speed Unmanned Vehicles | Embodied AI | Drones |
 
 ---
 
