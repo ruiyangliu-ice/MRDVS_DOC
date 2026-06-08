@@ -21,20 +21,18 @@
 
 | Resource | Description |
 |:---|:---|
-| [MRDVS SDK](https://github.com/Lanxin-MRDVS/CameraSDK/releases) | Core SDK (C++ / Python) |
-| [MRDVS ROS2](https://github.com/Lanxin-MRDVS/CameraSDK/releases) | Official ROS 2 driver |
-| [MRDVS Tools](https://github.com/Lanxin-MRDVS/CameraSDK/releases) | Camera config & firmware update tools |
+| [MRDVS LxCameraViewer](https://github.com/Lanxin-MRDVS/CameraSDK/releases) | Camera viewer software |
 
 ### Documentation
 
 | Resource | Link |
 |:---|:---|
-| Online Documentation | [文档文件夹](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
-| C++ API Reference | [API文件夹](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
-| Python API Reference | [Python示例代码](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
-| Product Datasheets | [产品资料](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) |
+| LxCameraSDK C/C++ Developer Guide | [LxCameraSDK C/C++ Developer Guide](https://github.com/Lanxin-MRDVS/CameraSDK/blob/master/Document_EN/MRDVS_LxCameraSDK_C-Cpp_DeveloperGuide_V1.0_20260604.pdf) |
+| LxCameraSDK Python Developer Guide | [LxCameraSDK Python Developer Guide](https://github.com/Lanxin-MRDVS/CameraSDK/blob/master/Document_EN/LxCameraSDK-Python%20User%20Manual_EN.PDF) |
+| LxCameraViewer User Manual | [LxCameraViewer User Manual](https://github.com/Lanxin-MRDVS/CameraSDK/blob/master/Document_EN/LxCameraViewer%20User%20Manual.pdf) |
+| Product Datasheets | [Product Datasheets](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Datasheets) |
 
-### Code Samples
+### Code Samples 待时总添加
 
 | Sample | Languages | Description |
 |:---|:---:|:---|
