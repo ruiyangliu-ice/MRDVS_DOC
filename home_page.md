@@ -32,16 +32,6 @@
 | LxCameraViewer User Manual | [LxCameraViewer User Manual](https://github.com/Lanxin-MRDVS/CameraSDK/blob/master/Document_EN/LxCameraViewer%20User%20Manual.pdf) |
 | Product Datasheets | [Product Datasheets](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Datasheets) |
 
-### Code Samples 待时总添加
-
-| Sample | Languages | Description |
-|:---|:---:|:---|
-| [C++](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) | C++ / Python | 应用描述 |
-| [C++](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) | C++ / Python | 应用描述 |
-| [C++](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) | C++ / Python | 应用描述 |
-| [C++](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) | C++ / Python | 应用描述 |
-| [C++](https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document) | C++ / Python | 应用描述 |
-
 ---
 
 ## Platform Support
