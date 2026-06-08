@@ -9,7 +9,7 @@
 </p>
 <p align="center">
   <a href="https://www.mrdvs.com">Website</a> ·
-  <a href="https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document">Docs</a> ·
+  <a href="https://github.com/Lanxin-MRDVS/CameraSDK/tree/master/Document_EN">Docs</a> ·
   <a href="https://github.com/Lanxin-MRDVS/CameraSDK/releases">Releases</a>
 </p>
 
@@ -17,7 +17,7 @@
 
 ## Resources
 
-### SDK & Tools
+### SDK Software Download
 
 | Resource | Description |
 |:---|:---|
@@ -55,7 +55,7 @@
 
 ## Quick Start
 
-### Install the SDK
+### How to install software & SDK
 
 **Linux (Ubuntu)**
 ```bash
@@ -125,7 +125,7 @@ finally:
 
 ## Product Lineup
 
-### S-Series -- dToF Visual Obstacle Detection
+### S-Series - dToF Depth 3D Camera
 <p align="left">
   <img width="50%" height="50%" alt="S" src="https://github.com/user-attachments/assets/60f229c2-181e-496f-891f-b56ff06e97bd" />
 </p>
@@ -144,7 +144,7 @@ Real-time 3D environmental perception with intelligent obstacle classification a
 
 ---
 
-### M-Series -- iToF Visual Docking & Measurement
+### M-Series - iToF Depth 3D Camera
 
 <p align="left">
   <img width="50%" height="50%" alt="M-Series" src="https://github.com/user-attachments/assets/cf9dd7de-5f99-4013-9532-937a44f385e0" />
@@ -163,7 +163,7 @@ High-fidelity volumetric sensing for precise short-range object recognition and 
 
 ---
 
-### V-Series -- Fusion-SLAM RTLS
+### V-Series - Fusion-SLAM RTLS
 
 <p align="left">
   <img width="50%" height="50%" alt="v" src="https://github.com/user-attachments/assets/cf8a6c07-10cc-49c9-888c-a24f1a990b81" />
